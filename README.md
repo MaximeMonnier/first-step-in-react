@@ -2,12 +2,27 @@
 
 # React World
 
-Just a litle application in React with some pages. who use an API of countries
+Just a little application in React with some pages.
 
 ![Alt text](public/screenchot/1.png)
 
-##
+## How to use
 
+Install Node.js `https://nodejs.org/en`,
+
+Clone the repo `https://github.com/MaximeMonnier/first-step-in-react.git`,
+
+In you file with bash made `npm i` to install all the packages,
+
+To watch the project `npm start`,
+
+To use the blog section `npm run server`
+
+## How does it work ?
+
+This application has three vu, the first view uses an API for countries, the second is just a page with lorem ipsum and the third is a blog where you can post some comment.
+
+// EXPLANATION FROM REACT
 // PARTIE 1
 
 # Getting Started with Create React App
