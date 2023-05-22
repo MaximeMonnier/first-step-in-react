@@ -1,3 +1,13 @@
+// PRESENTATION
+
+# React World
+
+Just a litle application in React with some pages. who use an API of countries
+
+![Alt text](public/screenchot/1.png)
+
+##
+
 // PARTIE 1
 
 # Getting Started with Create React App
