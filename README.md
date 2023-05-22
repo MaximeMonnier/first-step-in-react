@@ -22,6 +22,12 @@ To use the blog section `npm run server`
 
 This application has three vu, the first view uses an API for countries, the second is just a page with lorem ipsum and the third is a blog where you can post some comment.
 
+### Technologies used
+
+JavaScript, 
+React 18.1.0
+SCSS
+
 // EXPLANATION FROM REACT
 // PARTIE 1
 
