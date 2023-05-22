@@ -8,11 +8,9 @@ Just a little application in React with some pages.
 
 ## How to use
 
-Install Node.js `https://nodejs.org/en`,
-
 Clone the repo `https://github.com/MaximeMonnier/first-step-in-react.git`,
 
-In you file with bash made `npm i` to install all the packages,
+In you file with bash made `npm install` to install all the packages,
 
 To watch the project `npm start`,
 
