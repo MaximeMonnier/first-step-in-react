@@ -1,14 +1,28 @@
+.container{
+  margin-top: 30px;
+}
 .logo {
-  @include verticalCenter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 5px auto;
-  width: 200px;
+  width: 25%;
   border-radius: 20px;
   padding: 5px 0;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.307);
-  background: url(../../assets/img/main.jpg) center/cover;
+  background-color: rgb(128,128,128,0.107);
+  .auteur{
+    margin-top: 10px;
+  }
+
 
   img {
-    height: 40px;
+    border-radius: 100%;
+    height: 115px;
+    margin: 5px;
+  }
+  p{
+    text-align: center;
   }
   h3 {
     margin-left: 10px;

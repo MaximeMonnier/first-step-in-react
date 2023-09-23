@@ -4,6 +4,7 @@ import React, { useState } from "react";
 const Article = ({ article }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editContent, setEditContent] = useState("");
+  console.log(article._id);
 
   const dateFormater = (date) => {
     let newDate = new Date(date).toLocaleDateString("fr-RU", {
@@ -21,19 +22,30 @@ const Article = ({ article }) => {
   const handleEdit = () => {
     const data = {
       author: article.author,
-      content: editContent ? editContent : article.Content,
+      content: editContent ? editContent : article.content,
       date: article.date,
       updatedDate: Date.now(),
     };
 
-    axios.put("http://localhost:3004/articles/" + article.id, data).then(() => {
-      setIsEditing(false);
-    });
+    axios
+      .put(`http://localhost:5000/articles/${article._id}`, data)
+      .then(() => {
+        setIsEditing(false);
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la mise à jour de l'article :", error);
+      });
   };
 
   const handleDelete = () => {
-    axios.delete("http://localhost:3004/articles/" + article.id);
-    window.location.reload();
+    axios
+      .delete(`http://localhost:5000/articles/${article._id}`)
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la suppression de l'article :", error);
+      });
   };
 
   return (

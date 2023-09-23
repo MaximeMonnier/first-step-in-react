@@ -13,19 +13,22 @@ const Blog = () => {
 
   const getData = () => {
     axios
-      .get("http://localhost:3004/articles")
-      .then((res) => setBlogData(res.data));
+      .get("http://localhost:5000/articles")
+      .then((res) => setBlogData(res.data.articles.map((article) => article)))
+      .catch((error) =>
+        console.error("Erreur lors de la récupération des données :", error)
+      );
   };
 
-  useEffect(() => getData(), []);
+  useEffect(() => {
+    getData();
+  }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (content.length < 140) {
+  const handleSubmit = () => {
+    if (content.length < 2) {
       setError(true);
     } else {
-      axios.post("http://localhost:3004/articles", {
+      axios.post("http://localhost:5000/articles", {
         author: author,
         content: content,
         date: Date.now(),
@@ -42,7 +45,8 @@ const Blog = () => {
     <div className="blog-container">
       <Logo />
       <Navigation />
-      <h1>Blog</h1>
+      <h1>Ecris ton idée</h1>
+      <h1>↓</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
@@ -60,11 +64,13 @@ const Blog = () => {
         {valider && <p className="valider">Le message à bien été poster</p>}
         <input type="submit" value="envoyer" />
       </form>
+      <h1>Nos idée</h1>
+      <h1>↓</h1>
       <ul>
         {blogData
           .sort((a, b) => b.date - a.date)
           .map((article) => (
-            <Article key={article.id} article={article} />
+            <Article key={article._id} article={article} />
           ))}
       </ul>
     </div>
